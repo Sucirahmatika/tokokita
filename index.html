@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Fashion Wanita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fashion Shop</h1>
+        <nav>
+            <button id="homeBtn">Beranda</button>
+            <button id="cartBtn">Keranjang (<span id="cartCount">0</span>)</button>
+        </nav>
+    </header>
+
+    <main id="mainContent">
+        <!-- Daftar Produk -->
+        <section id="products" class="products-grid">
+            <!-- Produk akan di-generate oleh JS -->
+        </section>
+
+        <!-- Keranjang Belanja -->
+        <section id="cart" class="cart-section hidden">
+            <h2>Keranjang Belanja</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <p>Total: Rp <span id="totalPrice">0</span></p>
+                <button id="checkoutBtn">Checkout</button>
+            </div>
+        </section>
+
+        <!-- Checkout -->
+        <section id="checkout" class="checkout-section hidden">
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <label>Nama: <input type="text" id="buyerName" required></label>
+                <label>Alamat: <textarea id="buyerAddress" required></textarea></label>
+                <label>Metode Pembayaran:
+                    <select id="paymentMethod" required>
+                        <option value="transfer">Transfer Bank</option>
+                        <option value="ewallet">E-Wallet (GoPay/Ovo)</option>
+                        <option value="cod">Cash on Delivery</option>
+                    </select>
+                </label>
+                <p>Total Pembayaran: Rp <span id="checkoutTotal">0</span></p>
+                <button type="submit">Bayar Sekarang</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal Detail Produk -->
+    <div id="productModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <h3 id="modalName"></h3>
+            <p id="modalDesc"></p>
+            <p>Harga: Rp <span id="modalPrice"></span></p>
+            <p>Stok: <span id="modalStock"></span></p>
+            <button id="addToCartModal">Tambah ke Keranjang</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Suci Fashion Shopp </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
